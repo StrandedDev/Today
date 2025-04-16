@@ -1,0 +1,250 @@
+/* General Purpose */
+
+:root{
+    --bg-white: #ecdfdf;
+    --bg-black: #0c0c0c;
+    --full-white: #ffffff;
+    --full-black: #000000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+    overflow: hidden;
+    list-style: none;
+    background-color: transparent;
+}
+
+body{
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* General Purpose */
+
+
+
+/* Task list */
+
+#tasks-list-container{
+    height: inherit;
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--bg-white);
+    display: block;
+    padding: 10px;
+}
+
+
+.period > .period_heading{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.period > .period_heading > .period_toggle{
+    height: 20px;
+    width: 20px;
+    background-color: var(--full-white);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.period > .period_heading > .period_toggle > .period_toggle_fill{
+    height: 14px;
+    width: 14px;
+    display: block;
+    border-radius: 50px;
+    /* background-color: var(--bg-black); */
+}
+
+.period > .period_heading > .period_title{
+    font-family: 'Poiret One', sans-serif;
+    font-size: 32px;
+    padding-left: 10px;
+    height: fit-content;
+}
+
+.period > .period_tasks_container{
+    padding: 10px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.period > .period_tasks_container > li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.period > .period_tasks_container > li,
+.period > .period_tasks_container > li > span{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-transform: capitalize;
+    color: #5f5f5f;
+    padding: 5px 0px;
+    flex:3;
+}
+
+.through{
+    text-decoration: line-through;
+}
+
+/* Task list */
+
+
+
+/* Menu and Inputs */
+#toggleBtn{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: var(--bg-black);
+    box-shadow: 0 2px 7px 3px rgba(0,0,0,0.2);
+}
+
+#toggleBtn:active{
+    animation: click 0.2s ease-in-out;
+}
+
+@keyframes click{
+    from,to{transform:translate(-50% 0)}
+    50%{transform:translate(-50%, 5px);}
+}
+
+#toggleBtn > svg{
+    transition: all 0.1s linear;
+}
+
+.rotate45{
+    transform: rotateZ(45deg);
+}
+
+#menu{
+    display: none;
+}
+
+
+#menu.active{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background-color: var(--bg-black);
+    box-shadow: 0 5px 15px 5px rgba(0,0,0,0.2);
+    gap: 25px;
+}
+
+
+.menu_option{
+    height: 25px;
+    width: 25px;
+    display: block;
+}
+
+
+
+/* Menu and input */
+
+
+/* Extended menu - Add */
+
+#add-task-menu{
+    display: none;
+}
+
+#add-task-menu.active{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--full-white);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#add-task-menu > div > input{
+    font-size: 16px;
+    background-color: var(--bg-white);
+    font-family: 'Noto sans', sans-serif;
+    padding: 12px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#add-task-menu > div > select{
+    appearance: none;
+    background-color: var(--bg-white);
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+
+
+#add-task-menu > div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#add-task-menu > div > button{
+    padding: 8px 0;
+    font-family: 'Noto Sans', sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 1;
+}
+
+#add-task-menu > div:nth-child(2) > button:nth-child(1){
+    background-color: var(--bg-white);
+    color: var(--full-black);
+}
+
+#add-task-menu > div:nth-child(2) > button:nth-child(2){
+    background-color: var(--bg-black);
+    color: var(--full-white);
+}
+
+
+/* Extended menu - Add */
+
+.delete-task{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex:1;
+}
+
+.delete-task > svg{
+    height: 25px;
+    width: 25px;
+}
